@@ -10,7 +10,7 @@
     "dev": "npx nodemon",
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "node dist/seeds/index.js",
-    "db:sync": "ts-node db/sync.ts"
+    "db:sync": "npx ts-node db/sync.ts"
   },
   "nodemonConfig": {
     "watch": [

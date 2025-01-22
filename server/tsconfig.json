@@ -16,7 +16,10 @@
     },
     "include": [
      "src/**/*",
-    "db/**/*"
+     "db/**/*"
   ],
+    "ts-node": {
+    "transpileOnly": true    // Add this to help with direct execution
+  },
     "typeRoots": ["./node_modules/@types", "./src/types"]
 }
