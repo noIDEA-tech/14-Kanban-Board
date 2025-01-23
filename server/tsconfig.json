@@ -1,25 +1,14 @@
 {
-    "extends": "../tsconfig.json",
-    "compilerOptions": {
-      /* Modules */
-      "target": "es6",
-      "module": "ES2015",
-      "rootDir": "." /* Specify the root folder within your source files. */,
-      "strict": true,
-      "esModuleInterop": true,
-      "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true,
-      /* Emit */
-      "outDir": "dist" /* Specify an output folder for all emitted files. */
-      // "noEmitOnError": true /* Disable emitting files if any type checking errors are reported. */
-      
-    },
-    "include": [
-     "src/**/*",
-     "db/**/*"
-  ],
-    "ts-node": {
-    "transpileOnly": true    // Add this to help with direct execution
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    /* Modules */
+    "rootDir": "src" /* Specify the root folder within your source files. */,
+
+    /* Emit */
+    "outDir": "dist" /* Specify an output folder for all emitted files. */
+    // "noEmitOnError": true /* Disable emitting files if any type checking errors are reported. */
   },
-    "typeRoots": ["./node_modules/@types", "./src/types"]
+  "include": ["src"],
+  "typeRoots": ["./node_modules/@types", "./src/types"]
 }
+
