@@ -8,6 +8,7 @@ class AuthService {
 
   loggedIn() {
     const token = this.getToken();
+    // Fix the token expiration check
     return !!token && !this.isTokenExpired(token);
   }
   

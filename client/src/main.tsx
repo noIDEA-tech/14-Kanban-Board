@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import './index.css';
 
 import App from './App.tsx';
@@ -16,20 +16,20 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        index: true,
-        element: <Board />
+        path: '/',
+        element: localStorage.getItem('token') ? <Board /> : <Navigate to="/login" />,
       }, 
-      {
-        path: '/edit',
-        element: <EditTicket />
-      },
-      {
-        path: '/create',
-        element: <CreateTicket />
-      },
       {
         path: '/login',
         element: <Login />
+      },
+      {
+        path: '/edit',
+        element: localStorage.getItem('token') ? <EditTicket /> : <Navigate to="/login" />,
+      },
+      {
+        path: '/create',
+        element: localStorage.getItem('token') ? <CreateTicket /> : <Navigate to="/login" />,
       }
     ]
   }
