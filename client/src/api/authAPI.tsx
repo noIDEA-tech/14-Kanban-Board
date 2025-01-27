@@ -9,14 +9,15 @@ const login = async (userInfo: UserLogin) => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(userInfo)
-      });
+    });
   
-      const data = await response.json();
-    
       if (!response.ok) {
-        throw new Error(data.message || 'Failed to login');
-      }
-  
+        const errorData = await response.json();
+        throw new Error(`Error: ${errorData.message}`);
+    }
+    
+        const data = await response.json();
+
       return data;
     } catch (err) {
       console.log('Error from user login: ', err);
