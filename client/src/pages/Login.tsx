@@ -20,7 +20,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const data = await login(loginData);
-      Auth.login(data.token);
+         Auth.login(data.token);
       // Add this line:
       window.location.href = '/';
     } catch (err) {

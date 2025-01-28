@@ -15,7 +15,7 @@ const login = async (userInfo: UserLogin) => {
         }
     
             const data = await response.json();
-    
+       
             return data;
         }   catch (err) {
             console.log('Error from user login: ', err);
