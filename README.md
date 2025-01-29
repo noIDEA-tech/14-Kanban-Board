@@ -1,5 +1,5 @@
-# 14 Full-Stack React: Kanban Board
-
+# Full-Stack React: Kanban Board
+![MIT](https://img.shields.io/badge/License-MIT-blue)
 
 ## User Story
 
@@ -9,23 +9,61 @@ I WANT a Kanban board with a secure login page
 SO THAT I can securely access and manage my work tasks
 ```
 
-## Acceptance Criteria
+## Website Links: 
+[website](https://github.com/noIDEA-tech/14-Kanban-Board)
 
-```md
-GIVEN a Kanban board with a secure login page
-WHEN I load the login page
-THEN I am presented with form inputs for username and password
-WHEN I enter my valid username and password
-THEN I am authenticated using JSON Web Tokens (JWT) and redirected to the main Kanban board page
-WHEN I enter an invalid username or password
-THEN I am presented with an error message indicating that the credentials are incorrect
-WHEN I successfully log in
-THEN a JWT is stored securely in the client's local storage for subsequent authenticated requests
-WHEN I log out
-THEN the JWT is removed from the client's local storage and I am redirected to the login page
-WHEN I try to access the Kanban board page without being authenticated
-THEN I am redirected to the login page
-WHEN I remain inactive for a defined period
-THEN my session expires, the JWT is invalidated, and I am redirected to the login page upon my next action
-```
+## Description:
+The Kanban Board is a secure visual project management tool desgined to help production teams organize and manage workflow efficiently by creating "todo" tickets to track each team's progress. This application uses JSON Web Token (JWT) for security and requires users to create a profile with user name and password. A JWT token is generated upon successful login, which is protected in local storage.
+
+![app_image](/client/assets/main-page-image.png)
+![app_image](/client/assets/login-image.png)
+![app_image](/client/assets/ticket-generator-image.png)
+
+## Table of Contents:
+- [Technologies used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Features](#features)
+- [Tests](#tests)
+- [Contact](#contact)
+
+
+## Technologies used: 
+- Node.js
+- Express.js
+- React
+- JSON Web Token and CORS
+- Postgres and Sequelize
+- Google Font API CSS
+
+## Installation:
+No needed installation. Go to website link for access.
+
+## Usage:
+`Create user login`
+
+## Credits
+Nancy Watreas, TA
+
+## License
+MIT
+
+## Features
+This application features Kanban Board as a visual tool for teams to use in product management. Teams and team leaders can track tasks by create "todo" tickets that can be updated and deleted once a task is completed. This application also features JSON Web Token (JWT) Authentication for secure user login authentication.
+
+## Tests
+Application is deployed using Render. No tests needed.
+
+## Challenges
+- Initiating JSON Web Token (JWT) 
+- Using Insomnia open-source desktop application to test the APIs and JWT Web Token
+- Issues with main page not rendering properly with CSS styles
+
+## Contact
+If there are any questions or concerns, I can be reached at:
+##### [github: https://github.com/noIDEA-tech](https://github.com/https://github.com/noIDEA-tech)
+##### [email: nwatreas2023@gmail.com](mailto:nwatreas2023@gmail.com)
+
 
