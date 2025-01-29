@@ -8,17 +8,18 @@ class AuthService {
 
   loggedIn() {
     const token = this.getToken();
-    // Fix the token expiration check
-    return !!token && !this.isTokenExpired(token);
+    // Return false if no token
+    if (!token) return false;
+    // Return true if token exists and is not expired
+    return !this.isTokenExpired(token);
   }
   
   isTokenExpired(token: string) {
     try {
       const decoded = jwtDecode<JwtPayload>(token);
-      if (decoded.exp && decoded.exp < Date.now() / 1000) {
-        return true;
-      }
-      return false;
+      if (!decoded.exp) return false;
+      // Compare expiration vs current time
+      return decoded.exp < Date.now() / 1000;
     } catch (err) {
       return false;
     }
@@ -27,7 +28,7 @@ class AuthService {
   getToken(): string {
     return localStorage.getItem('token') || '';
   }
-
+ 
   login(idToken: string) {
     localStorage.setItem('token', idToken);
     window.location.assign('/');
