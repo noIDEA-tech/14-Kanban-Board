@@ -3,7 +3,6 @@ import { User } from '../models/user.js';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 
-const router = Router();
 
  // TODO: If the user exists and the password is correct, return a JWT token
  export const login = async (req: Request, res: Response) => {
