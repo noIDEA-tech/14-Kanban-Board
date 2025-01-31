@@ -6,11 +6,7 @@ interface JwtPayload {
 }
  // TODO: verify the token exists and add the user data to the request object
 
- export const authenticateToken = (
-  req: Request, 
-  res: Response, 
-  next: NextFunction
-): Response | void => {
+ export const authenticateToken = (req: Request, res: Response, next: NextFunction): Response | void  => {
 
   // Get token from header
   const authHeader = req.headers['authorization'];
@@ -20,15 +16,16 @@ interface JwtPayload {
    if (!token) {
     return res.status(401).json({ message: 'No token provided' });
   }
+
   try {
     // Verify token
     const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY || '') as JwtPayload;
     
-    // Add user data to request object
+   // Add user data to request object
     req.user = {
       username: decoded.username
     };
-
+    
     next();
   } catch (error) {
     return res.status(403).json({ message: 'Invalid or expired token' });
