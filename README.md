@@ -10,7 +10,8 @@ SO THAT I can securely access and manage my work tasks
 ```
 
 ## Website Links: 
-[website](https://github.com/noIDEA-tech/14-Kanban-Board)
+* [GitHub Link](https://github.com/noIDEA-tech/14-Kanban-Board)
+* [Deployed Link](https://pending deploy...)
 
 ## Description:
 The Kanban Board is a secure visual project management tool desgined to help production teams organize and manage workflow efficiently by creating "todo" tickets to track each team's progress. This application uses JSON Web Token (JWT) for security and requires users to create a profile with user name and password. A JWT token is generated upon successful login, which is protected in local storage.
