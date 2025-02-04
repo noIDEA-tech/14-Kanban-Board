@@ -4,7 +4,7 @@ import { UserLogin } from "../interfaces/UserLogin";
 const login = async (userInfo: UserLogin) => {
     try {
       const response = await fetch('/auth/login', {
-        method: 'POST',    // A string to indicate whether the request will use CORS, or will be restricted to same-origin URLs. Sets request's mode. //
+        method: 'POST',    
         headers: {
             'Content-Type': 'application/json',
         },
@@ -28,3 +28,5 @@ const login = async (userInfo: UserLogin) => {
 };
  
 export { login };
+
+// A string to indicate whether the request will use CORS, or will be restricted to same-origin URLs. Sets request's mode. //
