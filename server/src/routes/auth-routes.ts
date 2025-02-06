@@ -37,8 +37,23 @@ import bcrypt from 'bcrypt';
       process.env.JWT_SECRET_KEY || '',
       { expiresIn: '24h' }
     );
+   
+    return res.json({ token });
+  } catch (error) {
+    console.error('Login error:', error);
+    return res.status(500).json({ message: 'Server error during login' });
+  }
+};
 
-    // // Return token and success response
+const router = Router();
+ 
+router.post('/login', login);
+
+export default router;
+
+// POST /login - Login a user
+
+ // // Return token and success response
     // return res.json({
     //   message: 'Login successful',
     //   token,
@@ -50,16 +65,3 @@ import bcrypt from 'bcrypt';
    // Generate JWT token
     
    // Return token
-    return res.json({ token });
-  } catch (error) {
-    console.error('Login error:', error);
-    return res.status(500).json({ message: 'Server error during login' });
-  }
-};
-
-const router = Router();
- 
-// POST /login - Login a user
-router.post('/login', login);
-
-export default router;
