@@ -6,7 +6,6 @@ import { TicketFactory } from './ticket.js';
 
 let sequelize: Sequelize;
 
-// For production environment (Render)
 if (process.env.DATABASE_URL) {
   sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialect: 'postgres',
@@ -18,7 +17,7 @@ if (process.env.DATABASE_URL) {
     }
   });
 } else {
-  // For local development
+  
   sequelize = new Sequelize(
     process.env.DB_NAME || '',
     process.env.DB_USER || '',

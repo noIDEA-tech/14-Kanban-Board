@@ -55,7 +55,7 @@ MIT
 This application features Kanban Board as a visual tool for teams to use in product management. Teams and team leaders can track tasks by create "todo" tickets that can be updated and deleted once a task is completed. This application also features JSON Web Token (JWT) Authentication for secure user login authentication.
 
 ## Tests
-Application is deployed using Render. No tests needed.
+This application is deployed using Render. If running in a terminal, from root diretory run: `npm install` `npm run build` `npm run seed` and then run `npm run start:dev`
 
 ## Challenges
 - Initiating JSON Web Token (JWT) 
