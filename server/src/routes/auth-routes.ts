@@ -3,17 +3,21 @@ import { User } from '../models/user.js';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 
- export const login = async (req: Request, res: Response): Promise<Response> => {
-  const { username, password } = req.body;
+interface UserType {
+  username: string;
+  password: string;
+}
 
- if (!username || !password) {
-  return res.status(400).json({ message: 'Username and password are required' });
-}  
+export const login = async (req: Request, res: Response): Promise<Response> => {
+  const { username, password } = req.body as UserType;
+
+  if (!username || !password) {
+    return res.status(400).json({ message: 'Username and password are required' });
+  }
 
   try {
-    
     const user = await User.findOne({ where: { username } });
-  
+
     if (!user) {
       return res.status(401).json({ message: 'Invalid username or password' });
     }
@@ -29,7 +33,6 @@ import bcrypt from 'bcrypt';
       process.env.JWT_SECRET_KEY || '',
       { expiresIn: '24h' }
     );
-   
     return res.json({ token });
   } catch (error) {
     console.error('Login error:', error);
@@ -38,8 +41,7 @@ import bcrypt from 'bcrypt';
 };
 
 const router = Router();
- 
+
 router.post('/login', login);
 
 export default router;
-

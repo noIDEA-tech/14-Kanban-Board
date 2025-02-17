@@ -33,8 +33,13 @@ class AuthService {
     }
   }
 
-  getToken(): string {    
-      return localStorage.getItem('id_token') || '';    
+  getToken(): string {
+    try {
+      return localStorage.getItem('id_token') || '';
+    } catch (error) {
+      console.error('Error accessing localStorage:', error);
+      return '';
+    }
   }
 
   login(idToken: string): void {    
@@ -48,7 +53,7 @@ class AuthService {
     
     window.location.assign('/login');  
   }
-}
+};
 
 export default new AuthService();
 
