@@ -21,7 +21,7 @@ const Login = () => {
     try {
       const data = await login(loginData);
          Auth.login(data.token);
-      // Add this line:
+   
       window.location.href = '/';
     } catch (err) {
       console.error('Failed to login', err);

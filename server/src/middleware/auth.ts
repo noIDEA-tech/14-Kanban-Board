@@ -6,7 +6,6 @@ interface JwtPayload {
 }
 
 export const authenticateToken = (req: Request, res: Response, next: NextFunction): Response | void  => {
-
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1];  
 
@@ -15,9 +14,7 @@ export const authenticateToken = (req: Request, res: Response, next: NextFunctio
   }
 
   try {
-   
     const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY || '') as JwtPayload;
-    
     req.user = {
       username: decoded.username
     };
